@@ -27,17 +27,17 @@
                     </div>
                     </form>
                     <div id="rightSide" class="col-sm-6">
-                    <div id="sorters">
-                        <a id="priority" ng-click="sortField='number'; reverse = !reverse" href="" class="btn btn-primary">Order by priority</a>
-                        <a id="alpha" ng-click="sortField='newtask'; reverse = !reverse" href="" class="btn btn-primary">Order alphabetically</a>
+                        <div id="sorters">
+                            <a id="priority" ng-click="sortField='number'; reverse = !reverse" href="" class="btn btn-primary">Order by priority</a>
+                            <a id="alpha" ng-click="sortField='newtask'; reverse = !reverse" href="" class="btn btn-primary">Order alphabetically</a>
                         </div>
                         <br>
                         <br>
                         <table class="table">
-                            <tr ng-class="todo.value" ng-repeat="todo in todos | orderBy: sortField: reverse">
+                            <tr ng-class="[todo.value, { 'completed': todo.completed }]" ng-repeat="todo in todos | orderBy: sortField: reverse">
                                 <td>
                                     <p id="checkHere">
-                                        <input type="checkbox">
+                                        <input ng-model="todo.completed" type="checkbox">
                                     </p>
                                     <p id="theNewTask" ng-hide="editing">{{todo.newtask}}</p>
                                     <input ng-blur="editing = false;" ng-show="editing" ng-model="todo.newtask" id="editBox" type="text">

@@ -156,7 +156,7 @@ td:first-child {
 	border-top: 0px;
 }
 
-/* many media queries time */
+/* many, many media queries time */
 
 @media screen and (min-width: 720px){
 
@@ -308,4 +308,10 @@ label {
 		margin-left: 21%;
 	}
 
+}
+
+.completed {
+	background-color: #c5ba9e;
+	color: #7a6c5d;
+	text-decoration: line-through;
 }
